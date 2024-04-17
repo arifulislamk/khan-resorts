@@ -11,10 +11,13 @@ import Login from './Components/Login.jsx';
 import Register from './Components/Register.jsx';
 import UpdateProfile from './Components/UpdateProfile.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
+import ErrorPage from './Components/ErrorPage.jsx';
+import { HelmetProvider } from 'react-helmet-async';
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Root></Root>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: "/",
@@ -39,7 +42,9 @@ const router = createBrowserRouter([
 ReactDOM.createRoot(document.getElementById('root')).render(
   <React.StrictMode>
     <AuthProvider>
-      <RouterProvider router={router} />
+      <HelmetProvider>
+        <RouterProvider router={router} />
+      </HelmetProvider>
     </AuthProvider>
   </React.StrictMode>,
 )

@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
-    const { createuser } = useContext(AuthContext) ;
+    const { createuser } = useContext(AuthContext);
 
     const handleRegister = e => {
         e.preventDefault();
@@ -13,16 +14,19 @@ const Register = () => {
         console.log(email, password)
 
 
-        createuser(email,password)
-        .then( res => {
-            console.log(res.user)
-        })
-        .catch( error => {
-            console.log(error)
-        })
+        createuser(email, password)
+            .then(res => {
+                console.log(res.user)
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     return (
         <div>
+            <Helmet className="text-sm">
+                <title className="">RESORTS | REGISTER</title>
+            </Helmet>
             <h2 className="text-center font-medium text-5xl">Please Register</h2>
             <form onSubmit={handleRegister} className="card-body lg:w-1/2 mx-auto">
                 <div className="form-control">

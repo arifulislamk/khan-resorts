@@ -1,6 +1,7 @@
 import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { Helmet } from "react-helmet-async";
 
 const Login = () => {
     const navigate = useNavigate();
@@ -45,6 +46,9 @@ const Login = () => {
 
     return (
         <div>
+            <Helmet>
+                <title className="">RESORTS | LOGIN</title>
+            </Helmet>
             <h2 className="text-center font-medium text-5xl">Please Login</h2>
             <form onSubmit={handleLogin} className="card-body lg:w-1/2 mx-auto">
                 <div className="form-control">

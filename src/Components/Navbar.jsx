@@ -31,7 +31,7 @@ const Navbar = () => {
                         <li><a>Item 3</a></li>
                     </ul>
                 </div>
-                <a className="btn btn-ghost text-xl">KHAN RESORTS</a>
+                <Link to="/" className=" text-xl">KHAN RESORTS</Link>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
@@ -41,7 +41,8 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <>
-                        <p>{user.email}</p>
+                        <img className=" w-10 rounded-lg mr-2" src={user.photoURL} alt="" />
+                        <p className="mr-4">{user.email}</p>
                         <Link><button onClick={handleLogout} className="btn text-xl font-bold">LogOut</button></Link>
                     </> :
                         <Link to="/login"><button className="btn text-xl font-bold">Login</button></Link>
