@@ -3,12 +3,11 @@ import Sileder from "./Sileder";
 
 const Home = () => {
     return (
-        <div>
+        <div className="mt-10">
             <Helmet className="text-sm">
                 <title className="">RESORTS | HOME</title>
             </Helmet>
             <Sileder></Sileder>
-            <h2>This Home</h2>
         </div>
     );
 };

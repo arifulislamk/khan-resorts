@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 
 const Register = () => {
 
+    const [registerError, setregisterError] = useState('');
+    const [successfull, setsuccessfull] = useState('');
     const { createuser } = useContext(AuthContext);
 
     const handleRegister = e => {
@@ -13,9 +15,24 @@ const Register = () => {
         const password = e.target.password.value;
         console.log(email, password)
 
+        setregisterError('')
+        setsuccessfull('')
+        if (password.length < 6) {
+            setregisterError('password must be at least 6 charecter or more charecter')
+            return;
+        }
+        else if (!/[A-Z]/.test(password)) {
+            setregisterError('Password Shounld be uppercase at least one charecter')
+            return;
+        }
+        else if (!/[a-z]/.test(password)) {
+            setregisterError('Password Shounld be lowwercase at least one charecter')
+            return;
+        }
 
         createuser(email, password)
             .then(res => {
+                setsuccessfull('User Created Successfully done')
                 console.log(res.user)
             })
             .catch(error => {
@@ -60,6 +77,12 @@ const Register = () => {
                     <p>Already have an account? Please <Link className="text-blue-500" to="/login">Login</Link></p>
                 </div>
             </form>
+            {
+                registerError && <p className="mb-4 text-3xl text-red-800">{registerError}</p>
+            }
+            {
+                successfull && <p className=" mb-4 text-3xl text-green-800">{successfull}</p>
+            }
 
         </div>
     );

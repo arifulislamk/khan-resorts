@@ -11,29 +11,36 @@ const AuthProvider = ({ children }) => {
     const githubProbider = new GithubAuthProvider();
 
     const [user, setUser] = useState(null);
+    const [loading,setLoading] = useState(true);
 
     const createuser = (email, password) => {
+        setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
     }
 
     const loginuser = (email, password) => {
+        setLoading(true)
         return signInWithEmailAndPassword(auth, email, password)
     }
 
     const googlelogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, googleProvider)
     }
     const githublogin = () => {
+        setLoading(true)
         return signInWithPopup(auth, githubProbider)
     }
 
     const logOut = () => {
+        setLoading(true)
         return signOut(auth)
     }
 
     useEffect(() => {
         const unSubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
+            setLoading(false)
             console.log('inside from useeffect', currentUser)
         })
         return () => {
@@ -47,7 +54,8 @@ const AuthProvider = ({ children }) => {
         loginuser,
         googlelogin,
         logOut,
-        githublogin
+        githublogin,
+        loading
     }
 
     return (
