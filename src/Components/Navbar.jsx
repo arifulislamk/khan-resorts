@@ -8,13 +8,13 @@ const Navbar = () => {
 
     const handleLogout = () => {
         logOut()
-        .then( res => {
-            console.log(res.user)
-            navigate("/login")
-        })
-        .catch(error => {
-            console.log(error)
-        })
+            .then(res => {
+                console.log(res.user)
+                navigate("/login")
+            })
+            .catch(error => {
+                console.log(error)
+            })
     }
     const links = <>
         <li> <NavLink to="/">Home</NavLink> </li>
@@ -41,7 +41,10 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <>
-                        <img className="w-10 rounded-lg mr-2" src={user.photoURL} alt="" />
+
+                        <div className=" tooltip " data-tip={user.displayName}>
+                            <img className="w-10 rounded-lg mr-2" src={user.photoURL} alt="" />
+                        </div>
                         <p className="lg:mr-4 hidden lg:flex  text-sm">{user.email}</p>
                         <Link><button onClick={handleLogout} className="btn p-2 lg:px-4 lg:py-2 lg:text-xl lg:font-bold">LogOut</button></Link>
                     </> :
