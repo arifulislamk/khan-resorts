@@ -13,6 +13,7 @@ import UpdateProfile from './Components/UpdateProfile.jsx';
 import AuthProvider from './AuthProvider/AuthProvider.jsx';
 import ErrorPage from './Components/ErrorPage.jsx';
 import { HelmetProvider } from 'react-helmet-async';
+import CardDetails from './Components/CardDetails.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -34,7 +35,12 @@ const router = createBrowserRouter([
       {
         path: "/updateProfile",
         element: <UpdateProfile></UpdateProfile>
-      }
+      },
+      {
+        path: "/card/:id",
+        element: <CardDetails></CardDetails>,
+        loader: () => fetch('../data.json')
+      },
     ]
   },
 ]);

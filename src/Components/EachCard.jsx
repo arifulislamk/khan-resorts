@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const EachCard = ({ data }) => {
     const { id, image, area, status, facilities, segment_name, description, price, location } = data;
 
@@ -13,9 +15,11 @@ const EachCard = ({ data }) => {
                 <p>Price: {price}</p>
                 <p>Status:{status}</p>
             </div>
-            <div className=" justify-end items-end">
-                <button className="btn btn-ghost bg-blue-400">View Details</button>
-            </div>
+            <Link to={`/card/${id}`}>
+                <div className=" justify-end items-end">
+                    <button className="btn btn-ghost bg-blue-400">View Details</button>
+                </div>
+            </Link>
         </div>
     );
 };
