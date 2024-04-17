@@ -42,7 +42,7 @@ const Navbar = () => {
                 {
                     user ? <>
 
-                        <div className=" tooltip " data-tip={user.displayName}>
+                        <div className="tooltip" data-tip={user.displayName}>
                             <img className="w-10 rounded-lg mr-2" src={user.photoURL} alt="" />
                         </div>
                         <p className="lg:mr-4 hidden lg:flex  text-sm">{user.email}</p>

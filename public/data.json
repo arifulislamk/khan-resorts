@@ -1,0 +1,80 @@
+ [
+      {
+        "id": 5,
+        "estate_title": "Contemporary Loft in Downtown",
+        "segment_name": "Hotels",
+        "description": "Stylish loft apartment located in a vibrant downtown neighborhood. Open layout with high ceilings and industrial-chic design.",
+        "price": "$7000",
+        "status": "rent",
+        "area": "1800 sq ft",
+        "location": "Los Angeles, California",
+        "facilities": ["Living room", "Kitchen", "Open layout", "High ceilings"],
+        "image": "https://i.ibb.co/TksPD1M/manuel-moreno-DGa0-LQ0y-DPc-unsplash.jpg",
+        "Property": "link_to_property_page"
+      },
+      {
+        "id": 6,
+        "estate_title": "Beachfront Bungalow Retreat",
+        "segment_name": "Motels",
+        "description": "Charming bungalow steps away from the beach. Enjoy breathtaking sunsets and peaceful coastal living.",
+        "price": "$600",
+        "status": "rent",
+        "area": "1500 sq ft",
+        "location": "Maui, Hawaii",
+        "facilities": ["Living room", "Kitchen", "Beachfront view", "Patio"],
+        "image": "https://i.ibb.co/Q89Sf0h/sidath-vimukthi-b-Pq8t-VLp-I4w-unsplash.jpg",
+        "Property": "link_to_property_page"
+      },
+      {
+        "id": 7,
+        "estate_title": "Mountain View Cabin",
+        "segment_name": "Resorts",
+        "description": "Cozy cabin nestled in the mountains. Ideal for nature lovers and outdoor enthusiasts.",
+        "price": "$300",
+        "status": "rent",
+        "area": "1200 sq ft",
+        "location": "Aspen, Colorado",
+        "facilities": ["Living room", "Kitchen", "Mountain view", "Fireplace"],
+        "image": "https://i.ibb.co/9cZbDWw/sidath-vimukthi-gy-I81i-Dtsz0-unsplash.jpg",
+        "Property": "link_to_property_page"
+      },
+      {
+        "id": 8,
+        "estate_title": "Urban Townhouse with Rooftop Deck",
+        "segment_name": "Vacation rentals",
+        "description": "Modern townhouse with a private rooftop deck. Perfect for entertaining and enjoying city views.",
+        "price": "$9000",
+        "status": "rent",
+        "area": "2200 sq ft",
+        "location": "Chicago, Illinois",
+        "facilities": ["Living room", "Kitchen", "Rooftop deck", "City view"],
+        "image": "https://i.ibb.co/wKRmZtB/sidath-vimukthi-29z-Da-Mhy-Is-U-unsplash.jpg",
+        "Property": "link_to_property_page"
+      },
+      {
+        "id": 9,
+        "estate_title": "Colonial Style Family Home",
+        "segment_name": "Lodges",
+        "description": "Classic colonial-style home with spacious rooms and a large backyard. Ideal for families.",
+        "price": "$500",
+        "status": "rent",
+        "area": "2800 sq ft",
+        "location": "Charleston, South Carolina",
+        "facilities": ["Living room", "Kitchen", "Backyard", "Colonial architecture"],
+        "image": "https://i.ibb.co/JrF1C5H/christian-lambert-l-OXh-HLWP1-NE-unsplash.jpg",
+        "View Property": "link_to_property_page"
+      },
+      {
+        "id": 10,
+        "estate_title": "Luxury Penthouse with Panoramic City Views",
+        "segment_name": "Guesthouses",
+        "description": "Exquisite penthouse offering unparalleled luxury and breathtaking city skyline views.",
+        "price": "$500",
+        "status": "rent",
+        "area": "4000 sq ft",
+        "location": "Manhattan, New York",
+        "facilities": ["Living room", "Kitchen", "Private elevator", "Panoramic city views"],
+        "image": "https://i.ibb.co/TksPD1M/manuel-moreno-DGa0-LQ0y-DPc-unsplash.jpg",
+        "Property": "link_to_property_page"
+      }
+    ]

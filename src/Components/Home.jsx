@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet-async";
 import Sileder from "./Sileder";
+import AllCard from "./AllCard";
 
 const Home = () => {
     return (
@@ -8,6 +9,7 @@ const Home = () => {
                 <title className="">RESORTS | HOME</title>
             </Helmet>
             <Sileder></Sileder>
+            <AllCard></AllCard>
         </div>
     );
 };
