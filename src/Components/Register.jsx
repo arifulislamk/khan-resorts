@@ -2,11 +2,13 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { LuEyeOff, LuEye } from "react-icons/lu";
 
 const Register = () => {
 
     const [registerError, setregisterError] = useState('');
     const [successfull, setsuccessfull] = useState('');
+    const [showpassword, setshowpassword] = useState(false);
     const { createuser } = useContext(AuthContext);
 
     const handleRegister = e => {
@@ -40,7 +42,7 @@ const Register = () => {
             })
     }
     return (
-        <div>
+        <div className="mt-4">
             <Helmet className="text-sm">
                 <title className="">RESORTS | REGISTER</title>
             </Helmet>
@@ -68,7 +70,13 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text">Password</span>
                     </label>
-                    <input type="password" name="password" placeholder="password" className="input input-bordered" required />
+                    <div className="mb-4 relative" >
+                        <input className="  w-full py-2 px-4 border border-gray-400 rounded-lg"
+                            type={showpassword ? 'text' : 'password'} name="password" id="" required />
+                        <span className="absolute top-3 right-4 " onClick={() => { setshowpassword(!showpassword) }}>
+                            {showpassword ? <LuEyeOff /> : <LuEye />}
+                        </span>
+                    </div>
                 </div>
                 <div className="form-control mt-6">
                     <button className="btn btn-primary">Register</button>
