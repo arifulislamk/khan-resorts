@@ -16,6 +16,7 @@ import { HelmetProvider } from 'react-helmet-async';
 import CardDetails from './Components/CardDetails.jsx';
 import HideRouter from './HideRouter/HideRouter.jsx';
 import DashBoard from './Components/DashBoard.jsx';
+import ContactUs from './Components/ContactUs.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -46,6 +47,10 @@ const router = createBrowserRouter([
       {
         path: "/dashboard",
         element: <HideRouter><DashBoard></DashBoard></HideRouter>
+      },
+      {
+        path: "/contactus",
+        element: <ContactUs></ContactUs>
       }
     ]
   },

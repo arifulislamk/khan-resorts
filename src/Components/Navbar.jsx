@@ -19,7 +19,7 @@ const Navbar = () => {
     const links = <>
         <li> <NavLink to="/">Home</NavLink> </li>
         <li> <NavLink to="/popular">Popular</NavLink> </li>
-        <li> <NavLink to="/Contact Us">Contact Us</NavLink> </li>
+        <li> <NavLink to="/contactus">Contact Us</NavLink> </li>
 
         {user && <>
             <li> <NavLink to="/updateProfile">Update Profile</NavLink> </li>
