@@ -2,6 +2,8 @@ import { useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const navigate = useNavigate();
@@ -15,11 +17,12 @@ const Login = () => {
         loginuser(email, password)
             .then(res => {
                 console.log(res.user)
-                console.log("login now")
                 navigate("/")
+                toast.success('Login Succesfully Done')
             })
             .catch(error => {
                 console.log(error)
+                toast.error('Please Type Correct Information!')
             })
     }
 
@@ -28,19 +31,23 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 navigate("/")
+                toast.success('Login Succesfully Done')
             })
             .catch(error => {
                 console.log(error)
+                toast.error('There is an issuus!')
             })
     }
     const handlegithub = () => {
         githublogin()
             .then(res => {
                 console.log(res.user)
+                toast.success('Login Succesfully Done')
                 navigate("/")
             })
             .catch(error => {
                 console.log(error)
+                toast.error('There is an issuus!')
             })
     }
 
@@ -75,7 +82,7 @@ const Login = () => {
 
                 </div>
             </form>
-
+        <ToastContainer></ToastContainer>
         </div>
     );
 };
