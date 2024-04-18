@@ -1,5 +1,7 @@
 import { Helmet } from "react-helmet-async";
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const CardDetails = () => {
     const alldata = useLoaderData();
@@ -9,7 +11,13 @@ const CardDetails = () => {
     // console.log(books, id);
 
     const card = alldata.find(card => card.id == intId);
-    const { image, estate_title, area, status, facilities, segment_name, description, price, location } = card;
+
+    const { image, estate_title, area, status, facilities,
+         segment_name, description, price, location } = card;
+
+         const handlebookedbtn = () => {
+            toast.success("Booked Done")
+         }
     return (
         <section className="dark:bg-gray-100 dark:text-gray-800">
             <Helmet>
@@ -31,7 +39,13 @@ const CardDetails = () => {
                     </div>
                     <p className="text-lg  leading-snug">Facilities : {facilities}</p>
                     <p className="text-lg  leading-snug">Location : {location}</p>
+                    <p className="text-lg  leading-snug">Status : {status}</p>
                     <p>Price : {price}</p>
+
+                    <div>
+                        <button onClick={handlebookedbtn} className="btn bg-blue-400 mr-3 ">Booked Now</button>
+                        <Link to="/contactus"><button className="btn bg-blue-100">Direct Contact</button></Link>
+                    </div>
 
                 </div>
                 <div className="lg:w-1/2 xl:w-3/5 dark:bg-gray-100">
@@ -41,6 +55,7 @@ const CardDetails = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </section>
     );
 };

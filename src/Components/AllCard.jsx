@@ -13,7 +13,7 @@ const AllCard = () => {
     return (
         <div className="mt-10 lg:mt-20">
             <div>
-                <h2 className=" text-2xl lg:text-5xl font-bold text-center mb-5">Our Services</h2>
+                <h2 className=" text-2xl lg:text-5xl font-bold text-center mb-5">Our Popular Services</h2>
                 {/* <p className=" text-center">Explore thousands of job opportunities with all the information
                     you need. Its your future</p> */}
             </div>
