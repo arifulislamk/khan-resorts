@@ -2,7 +2,7 @@ const Review = () => {
     return (
         <div className="mt-6 lg:mt-14 rounded-lg shadow-xl">
             <h2 className=" text-3xl font-medium text-center">Customers Reviews</h2>
-            <div className=" p-3 lg:p-10 grid grid-cols-3 gap-4 ">
+            <div className=" p-3 lg:p-10 grid lg:grid-cols-3 gap-4 ">
                 <div className="container bg-blue-100 flex flex-col w-full max-w-lg p-6 mx-auto divide-y rounded-md dark:divide-gray-300 dark:bg-gray-50 dark:text-gray-800">
                     <div className="flex justify-between p-4">
                         <div className="flex space-x-4">
