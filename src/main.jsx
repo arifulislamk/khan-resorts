@@ -15,6 +15,7 @@ import ErrorPage from './Components/ErrorPage.jsx';
 import { HelmetProvider } from 'react-helmet-async';
 import CardDetails from './Components/CardDetails.jsx';
 import HideRouter from './HideRouter/HideRouter.jsx';
+import DashBoard from './Components/DashBoard.jsx';
 const router = createBrowserRouter([
   {
     path: "/",
@@ -35,13 +36,17 @@ const router = createBrowserRouter([
       },
       {
         path: "/updateProfile",
-        element: <UpdateProfile></UpdateProfile>
+        element: <HideRouter><UpdateProfile></UpdateProfile></HideRouter>
       },
       {
         path: "/card/:id",
         element: <HideRouter><CardDetails></CardDetails></HideRouter>,
         loader: () => fetch('../data.json')
       },
+      {
+        path: "/dashboard",
+        element: <HideRouter><DashBoard></DashBoard></HideRouter>
+      }
     ]
   },
 ]);

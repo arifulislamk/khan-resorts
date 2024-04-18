@@ -1,6 +1,8 @@
 import { useContext } from "react";
 import { Helmet } from "react-helmet-async";
 import { AuthContext } from "../AuthProvider/AuthProvider";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const UpdateProfile = () => {
     const { updatedProfile } = useContext(AuthContext);
@@ -12,8 +14,8 @@ const UpdateProfile = () => {
 
         updatedProfile(name, photo)
             .then(res => {
-                // toast.success("updated")
-                // console.log(res.user, 'updated')
+                toast.success("Profile update Success")
+                console.log(res, 'updated')
             })
             .catch(error => console.log(error))
 
@@ -27,21 +29,22 @@ const UpdateProfile = () => {
             <form onSubmit={handleUpdate} className="card-body lg:w-1/2 mx-auto">
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Update Name</span>
+                        <span className="label-text">Change Your Name</span>
                     </label>
                     <input type="text" name="name" placeholder="name" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Update PhotoURL</span>
+                        <span className="label-text">Change Your PhotoURL</span>
                     </label>
                     <input type="text" name="photoURL" placeholder="photoURL" className="input input-bordered" required />
                 </div>
                 <div className="form-control mt-6">
-                    <button className="btn btn-primary">Update</button>
+                    <button className="btn btn-primary">Save Change</button>
                 </div>
 
             </form>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

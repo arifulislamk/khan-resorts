@@ -18,8 +18,14 @@ const Navbar = () => {
     }
     const links = <>
         <li> <NavLink to="/">Home</NavLink> </li>
-        <li> <NavLink to="/updateProfile">Update Profile</NavLink> </li>
         <li> <NavLink to="/popular">Popular</NavLink> </li>
+        <li> <NavLink to="/Contact Us">Contact Us</NavLink> </li>
+
+        {user && <>
+            <li> <NavLink to="/updateProfile">Update Profile</NavLink> </li>
+            <li> <NavLink to="/dashboard">DashBoard</NavLink> </li>
+        </>}
+
     </>
     return (
         <div className="navbar bg-blue-400 px-6 py-3  rounded-md">
@@ -43,7 +49,7 @@ const Navbar = () => {
                 {
                     user ? <>
 
-                        <div className="tooltip" data-tip={user.displayName ? user.displayName:'Name not found'}>
+                        <div className="tooltip" data-tip={user.displayName ? user.displayName : 'Name not found'}>
                             <img className="w-10 rounded-lg mr-2" src={user.photoURL} alt="" />
                         </div>
                         <p className="lg:mr-4 hidden lg:flex  text-sm">{user.email}</p>
