@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { LuEyeOff, LuEye } from "react-icons/lu";
@@ -10,6 +10,7 @@ const Register = () => {
 
     const [showpassword, setshowpassword] = useState(false);
     const { createuser } = useContext(AuthContext);
+    const navigate = useNavigate();
 
     const handleRegister = e => {
         e.preventDefault();
@@ -33,10 +34,12 @@ const Register = () => {
         createuser(email, password)
             .then(res => {
                 toast.success('User Create Successfully done')
+                navigate("/")
                 console.log(res.user)
             })
             .catch(error => {
                 console.log(error)
+                toast.error('Email Already Use or There Is an Issue')
             })
     }
     return (
