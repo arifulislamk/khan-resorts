@@ -18,7 +18,6 @@ const Navbar = () => {
     }
     const links = <>
         <li> <NavLink to="/">Home</NavLink> </li>
-        <li> <NavLink to="/popular">Popular</NavLink> </li>
         <li> <NavLink to="/contactus">Contact Us</NavLink> </li>
 
         {user && <>

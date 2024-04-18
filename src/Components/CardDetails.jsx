@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import { useLoaderData, useParams } from "react-router-dom";
 
 const CardDetails = () => {
@@ -11,6 +12,9 @@ const CardDetails = () => {
     const { image, estate_title, area, status, facilities, segment_name, description, price, location } = card;
     return (
         <section className="dark:bg-gray-100 dark:text-gray-800">
+            <Helmet>
+                <title className="">RESORTS | {estate_title}</title>
+            </Helmet>
             <div className="container flex flex-col-reverse mx-auto lg:flex-row">
                 <div className="flex flex-col px-6 py-8 space-y-6 rounded-sm sm:p-8 lg:p-12 lg:w-1/2 xl:w-2/5 dark:bg-violet-600 dark:text-gray-50">
                     <div className="flex space-x-2 sm:space-x-4">

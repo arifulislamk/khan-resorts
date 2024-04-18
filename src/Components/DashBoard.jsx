@@ -1,12 +1,16 @@
 import { useContext } from "react";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet-async";
 
 const DashBoard = () => {
     const { user } = useContext(AuthContext);
 
     return (
         <div className=" lg:p-10 rounded-lg  mt-5 flex justify-center">
+            <Helmet>
+                <title className="">RESORTS | DashBoard</title>
+            </Helmet>
 
             <div className=" space-y-4 p-3 lg:p-10 border border-gray-400 shadow-lg bg-blue-100">
                 <div className="flex justify-end">

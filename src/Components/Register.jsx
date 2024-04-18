@@ -57,7 +57,7 @@ const Register = () => {
         <div className="mt-4">
             <ToastContainer />
             <Helmet className="text-sm">
-                <title className="">RESORTS | REGISTER</title>
+                <title className="">RESORTS | Register</title>
             </Helmet>
             <h2 className="text-center font-medium text-5xl">Please Register</h2>
             <form onSubmit={handleRegister} className="card-body lg:w-1/2 mx-auto">

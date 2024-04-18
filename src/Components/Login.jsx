@@ -59,7 +59,7 @@ const Login = () => {
     return (
         <div className="mt-4">
             <Helmet>
-                <title className="">RESORTS | LOGIN</title>
+                <title className="">RESORTS | Login</title>
             </Helmet>
             <h2 className="text-center font-medium text-5xl">Please Login</h2>
             <form onSubmit={handleLogin} className="card-body lg:w-1/2 mx-auto">

@@ -23,7 +23,7 @@ const UpdateProfile = () => {
     return (
         <div>
             <Helmet className="text-sm">
-                <title className="">RESORTS | UPDATEPROFILE</title>
+                <title className="">RESORTS | UpdateProfile</title>
             </Helmet>
             <h2 className=" text-center text-4xl mt-4  font-medium">Update Your Profile</h2>
             <form onSubmit={handleUpdate} className="card-body lg:w-1/2 mx-auto">

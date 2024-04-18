@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 
 const EachCard = ({ data }) => {
-    const { id, image, area, status, facilities, segment_name, description, price, location } = data;
+    const { id, image, area, status,estate_title, facilities, segment_name, description, price, location } = data;
 
     return (
         <div className="bg-gray-200 p-6 rounded-lg">
