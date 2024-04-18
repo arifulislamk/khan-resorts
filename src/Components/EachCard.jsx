@@ -17,7 +17,7 @@ const EachCard = ({ data }) => {
             </div>
             <Link to={`/card/${id}`}>
                 <div className=" justify-end items-end">
-                    <button className="btn btn-ghost bg-blue-400">View Details</button>
+                    <button className="btn btn-ghost bg-blue-400">View Property</button>
                 </div>
             </Link>
         </div>

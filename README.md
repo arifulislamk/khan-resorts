@@ -8,11 +8,10 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 # Website Name and Live URL 
-KHAN RESORTS 
-https://hospitality-assignment-khan.web.app/
+- KHAN RESORTS 
+- https://hospitality-assignment-khan.web.app/
 
-* RESORTS WEBSITE
-
+* features and characteristics for website 
 - Hotels: Discover a diverse array of accommodation options, ranging from luxurious suites to budget-friendly rooms, ensuring a comfortable stay for every guest.
 
 - Motels: Experience impeccable service with a focus on convenience and affordability, making it an ideal choice for travelers seeking a quick and easy stopover.

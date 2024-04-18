@@ -1,12 +1,16 @@
 import { useContext } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../AuthProvider/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
+    const location = useLocation() ;
     const navigate = useNavigate();
+    // console.log('location login',location)
+
+    
     const { loginuser, googlelogin, githublogin } = useContext(AuthContext);
     const handleLogin = e => {
         e.preventDefault();
@@ -17,7 +21,8 @@ const Login = () => {
         loginuser(email, password)
             .then(res => {
                 console.log(res.user)
-                navigate("/")
+                navigate(location?.state ? location.state : '/')
+                
                 toast.success('Login Succesfully Done')
             })
             .catch(error => {
@@ -30,7 +35,7 @@ const Login = () => {
         googlelogin()
             .then(res => {
                 console.log(res.user)
-                navigate("/")
+                navigate(location?.state ? location.state : '/')
                 toast.success('Login Succesfully Done')
             })
             .catch(error => {
@@ -43,7 +48,7 @@ const Login = () => {
             .then(res => {
                 console.log(res.user)
                 toast.success('Login Succesfully Done')
-                navigate("/")
+                navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
                 console.log(error)

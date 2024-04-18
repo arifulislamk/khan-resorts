@@ -5,6 +5,7 @@ import { Helmet } from "react-helmet-async";
 import { LuEyeOff, LuEye } from "react-icons/lu";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import {  updateProfile } from "firebase/auth";
 
 const Register = () => {
 
@@ -14,6 +15,8 @@ const Register = () => {
 
     const handleRegister = e => {
         e.preventDefault();
+        const name = e.target.name.value;
+        const photo = e.target.photo.value ;
         const email = e.target.email.value;
         const password = e.target.password.value;
         console.log(email, password)
@@ -36,6 +39,14 @@ const Register = () => {
                 toast.success('User Create Successfully done')
                 navigate("/")
                 console.log(res.user)
+                updateProfile(res.user,{
+                    displayName: name, photoURL: photo
+                })
+                .then(res => {
+                    toast.success("updated")
+                    console.log(res.user,'updated')
+                })
+                .catch(error => console.log(error))
             })
             .catch(error => {
                 console.log(error)
@@ -66,7 +77,7 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text">PhotoURL</span>
                     </label>
-                    <input type="text" name="photoURL" placeholder="photoURL" className="input input-bordered" required />
+                    <input type="text" name="photo" placeholder="photoURL" className="input input-bordered" required />
                 </div>
                 <div className="form-control">
                     <label className="label">
